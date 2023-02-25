@@ -4,7 +4,7 @@ import App from './App';
 import "./assets/css/index.css"
 import 'antd/dist/reset.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js'
+import 'bootstrap'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

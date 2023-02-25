@@ -30,13 +30,13 @@ app.use(express.json({limit: '50mb'}));
 app.use(express.urlencoded({limit: '50mb'}));
 
 
-// app.use(express.static(path.join(__dirname,"client_site/build")))
+ app.use(express.static(path.join(__dirname,"client_site/build")))
 
 
 
 //rate limiting......
-// const rateLimiter=rateLimit({windowMs:15*60*1000,max:3000})
-// app.use(rateLimiter)
+const rateLimiter=rateLimit({windowMs:15*60*1000,max:3000})
+app.use(rateLimiter)
 
 
 //routes........
@@ -64,6 +64,6 @@ else{console.log("Database Connection Sucess"+port)}
 })
 
 
-// app.get('*',function (req,res) {
-//     res.sendFile(path.resolve(__dirname,'client_site','build','index.html'))
-// })
+app.get('*',function (req,res) {
+    res.sendFile(path.resolve(__dirname,'client_site','build','index.html'))
+})

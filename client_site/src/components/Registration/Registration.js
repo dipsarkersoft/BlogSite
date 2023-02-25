@@ -33,10 +33,10 @@ const RegistrationFunc = () => {
 
           RegistrationUser(name,mobile,password,email,photo)
                 .then((result)=>{
-               // if(result===true){
-                   
-               // }
-               return true
+               if(result===true){
+                navigate("/login")
+               }
+               
            })
 
         }

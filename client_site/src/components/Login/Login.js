@@ -53,7 +53,7 @@ const Login = () => {
 
 
                                         <li>
-                                            <a href="/sendotp">Forgot Password?</a>
+                                            <a href="/">Forgot Password?</a>
                                         </li>
                                         <li>
                                             Don’t have an account? <a href="/registration">Sign up</a>
