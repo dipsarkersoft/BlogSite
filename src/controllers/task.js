@@ -1,5 +1,5 @@
 const {createTaskServices,deleteTaskServices,taskListCountServices,UpdateTaskServices,findAllProductsServices
-    ,findProductsByIDServices
+    ,findProductsByIDServices,userOwnPostServices
 
 }=require("../services/taskServices")
 
@@ -136,5 +136,29 @@ exports.selectPostById=async(req,res)=>{
 
     }
 }
+
+
+exports.UserOwnPost=async(req,res)=>{
+    try{
+        const email=req.email
+        const result=await userOwnPostServices(email)
+
+        res.status(200).json({
+            status:"sucess",
+            data:result
+
+        })
+
+    }
+    catch (e) {
+
+        res.status(400).json({
+            status:"failed",
+            message:e.message
+        })
+    }
+}
+    
+
 
 

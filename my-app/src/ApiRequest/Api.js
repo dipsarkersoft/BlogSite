@@ -141,25 +141,93 @@ export function Allpost(){
 }
 
 
-// export function postByid(id){
+export function PostByid(id){
 
-//     const url=BaseUrl+"/selectPostById/"+id
-//     return  axios.get(url)
-//         .then((res)=>{
+    console.log(id)
+
+    const url=BaseUrl+"/selectPostById/"+id
+    return  axios.get(url)
+        .then((res)=>{
             
-       
-//         if(res.status===200){ 
-//             return res.data
+        if(res.status===200){ 
             
-//         }
-//         else {
+            return res.data
+            
+        }
+        else {
            
-//             return false;
-//         }
-//     })
-//         .catch((error)=>{
+            return false;
+        }
+    })
+        .catch((error)=>{
             
-//             return false;
-//         })
-// }
+            return false;
+        })
+}
 
+
+export function UserOwnPostApi(){
+
+    const url=BaseUrl+"/UserOwnPost"
+    return  axios.get(url,AxiosHeader)
+        .then((res)=>{
+       
+        if(res.status===200){ 
+            return res.data;
+            
+        }
+        else {
+           
+            return false;
+        }
+    })
+        .catch((error)=>{
+            
+            return false;
+        })
+}
+
+
+export function Update (id,title, description,image){
+
+    const URL=BaseUrl+"/updateTask/"+id
+
+     const body={
+        title,description,image
+     }
+
+   return  axios.post(URL,body,AxiosHeader)
+
+        .then((res)=>{
+            if(res.status===200){
+                return true
+            }
+            else {
+                return false
+            }
+        })
+        .catch((error)=>{
+            return false
+        })
+}
+
+
+export function DeleteIteam(id){
+
+    const URL=BaseUrl+"/deleteTask/"+id
+
+  return  axios.delete(URL,AxiosHeader)
+    .then((res)=>{
+
+        if(res.status===200){
+            
+            return true
+        }
+        else {
+            return false
+        }     
+    }  
+      )
+
+.catch((error)=>{
+    return false})}

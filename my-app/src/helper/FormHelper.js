@@ -33,7 +33,8 @@ class FormHelper {
     }
 }
 
-export const { IsEmpty,
+export const { 
+    IsEmpty,
     IsMobile,
     IsEmail,
     ErrorToast,

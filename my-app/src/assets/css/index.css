@@ -161,6 +161,31 @@
  
  
  }
+.ALLpost h2{
+   margin: 30px 20px;
+
+}
+.ALLpost p{
+    margin: 30px 20px;
+ 
+ }
+.ALLpost img{
+    padding: 10px;
+   border-radius: 30px;
+}
+ .POSTONE{
+    margin: 10px;
+    padding: 20px;
+ }
+
+ .ModalMenuDesign{
+    margin: 20px 30px;
+    background-color: coral;
+ }
+ .list-img{
+    width: 50px;
+    height: auto;
+ }
   .two{
      width: 60px;
      height: 60px;

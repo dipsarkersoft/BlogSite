@@ -25,6 +25,13 @@ exports.taskListCountServices=async(email)=>{
   ])
 }
 
+exports.userOwnPostServices=async(email)=>{
+     return taskModel.aggregate([
+          {$match:{email:email}},
+          {$project:{_id:1,title:1,description:1,image:1,name:1,email:1,
+              }}])}
+          
+
 exports.findProductsByIDServices=async(query)=>{
      return taskModel.find(query)
 }

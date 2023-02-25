@@ -35,8 +35,8 @@ app.use(express.urlencoded({limit: '50mb'}));
 
 
 //rate limiting......
-const rateLimiter=rateLimit({windowMs:15*60*1000,max:3000})
-app.use(rateLimiter)
+// const rateLimiter=rateLimit({windowMs:15*60*1000,max:3000})
+// app.use(rateLimiter)
 
 
 //routes........

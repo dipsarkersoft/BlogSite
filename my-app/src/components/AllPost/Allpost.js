@@ -23,7 +23,6 @@ const Post = () => {
   const ReadPostItem=(id)=>{
    
      navigate("/selectpost/"+id)
-    
   }
 
   return (
@@ -37,8 +36,7 @@ const Post = () => {
           <div class="card">
           <img src={item.image} class="card-img-top" alt=" "/>
             <div class="card-body">
-              <h5 class="card-title">{item.title}</h5>
-              <p class="card-text">{item.description}</p>
+              <h5 class="card-title">{item.title}</h5>           
               <h6 className="date card-link">Post by : {item.name}</h6>
               <p className="card-text">Publish Date:{item.createdAt}</p>
               

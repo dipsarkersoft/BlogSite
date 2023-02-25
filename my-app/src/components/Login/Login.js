@@ -19,7 +19,7 @@ const Login = () => {
         else{
             LoginFunction(email,pass).then((result)=>{
                 if(result===true){
-                    window.location.href="/"
+                    window.location.href="/dashboard"
                 }
             })
 

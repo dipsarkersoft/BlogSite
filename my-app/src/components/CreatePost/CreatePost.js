@@ -54,16 +54,16 @@ const Create= () => {
                     <row className="d-flex justify-content-center">
                         <div className="col-12 col-lg-8  col-sm-12 col-md-8  p-2">
                             <div className="card">
-                            <img  ref={(input)=>userImgView=input} className="icon-nav-img two" src="" alt=""/>
+                            <img  ref={(input)=>userImgView=input} className="icon-nav-img two"  alt=""/>
                                 <hr/>
                                 <div className="card-body">
-                                    <h4>Create New</h4>
+                                    <h4>Create New Post</h4>
                                     <br/>
-                                    <input ref={(input) => titleRef = input} placeholder="Task Name"
+                                    <input ref={(input) => titleRef = input} placeholder="Post Name"
                                            className="form-control animated fadeInUp" type="text"/>
                                     <br/>
                                     <textarea ref={(input) => descriptionRef = input} rows={5}
-                                              placeholder="Task Description" className="form-control animated fadeInUp"
+                                              placeholder="Post Description" className="form-control animated fadeInUp"
                                               type="text"/>
 
                                      <label>Profile Picture</label>

@@ -1,8 +1,8 @@
 import {React} from 'react';
 import {  Dropdown, Space} from 'antd';
 import {MenuUnfoldOutlined} from "@ant-design/icons";
-//import {getUserDetails, removeSession} from "../helper/SessionHelper";
 import image from "../../assets/images/image.png"
+import { removeSession,getUserDetails } from '../../helper/SesssionHelper';
 
 
 
@@ -11,7 +11,7 @@ const items = [
     {
         key: '1',
         label: (
-            <a className="Item"  rel="noopener noreferrer" href="/">
+            <a className="Item"  rel="noopener noreferrer" href="/dashboard">
                Dashboard
             </a>
         ),
@@ -20,42 +20,11 @@ const items = [
         key: '2',
         label: (
             <a className="Item"  rel="noopener noreferrer" href="/create">
-                Create New
+                Create New Post
             </a>
         ),
     },
-    {
-        key: '3',
-        label: (
-            <a className="Item"  rel="noopener noreferrer" href="/new">
-                New Task
-            </a>
-        ),
-    },
-    {
-        key: '4',
-        label: (
-            <a className="Item" rel="noopener noreferrer" href="/progress">
-                In Progress
-            </a>
-        ),
-    },
-    {
-        key: '5',
-        label: (
-            <a className="Item"  rel="noopener noreferrer" href="/completed">
-                Completed
-            </a>
-        ),
-    },
-    {
-        key: '6',
-        label: (
-            <a className="Item"  rel="noopener noreferrer" href="/canceled">
-                Canceled
-            </a>
-        ),
-    }
+    
 
 ];
 
@@ -63,7 +32,7 @@ const items = [
 const Navmenu = () => {
 
 const logout=()=>{
-   
+    removeSession()
 }
 
     return (
@@ -96,20 +65,11 @@ const logout=()=>{
 
                                <div className="user-dropdown-content ">
                                    <div className="mt-4 text-center">
-                                       <img className="icon-nav-img icon-nav" src="" alt=""/>
+                                       
+                                   <p>{getUserDetails()["0"]["name"]}</p>
 
-                                       <p></p>
                                        <hr className="user-dropdown-divider  p-0"/>
                                    </div>
-
-                                   <div>
-                                       <a  className="side-bar-item" href="/profile">
-
-                                           <span  className="side-bar-item-caption">Profile</span>
-                                       </a>
-                                   </div>
-
-
                                    <div>
                                        <a  className="side-bar-item">
 
