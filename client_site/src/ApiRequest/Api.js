@@ -2,7 +2,7 @@ import axios from "axios"
 import {ErrorToast,SuccessToast} from "../helper/FormHelper"
 import {setUserDetails,setToken,getToken} from "../helper/SesssionHelper"
 
-const BaseUrl="http://localhost:8000/api/v1"
+const BaseUrl="https://cheerful-pike-purse.cyclic.app/api/v1"
 const AxiosHeader={headers:{"token":getToken()}}
 
 
