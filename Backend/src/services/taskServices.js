@@ -30,8 +30,18 @@ exports.findProductsByIDServices=async(query)=>{
 }
 
 
+          
 exports.findAllProductsServices=async()=>{
-     return taskModel.find()
-}
+     return taskModel.aggregate([
+          {$project:{_id:1,title:1,description:1,image:1,name:1,email:1,
+                    createdAt:{
+               $dateToString:{
+                    date:"$createdAt",
+                    format:`%d-%m-%Y`
+               }
+                    }}}
+     ])
 
+
+}
 

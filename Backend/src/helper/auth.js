@@ -6,8 +6,8 @@ exports.createToken = (result)=>{
 
      const payload = {
         
-         'email': result.email ,
-         "name":result.name
+         'email': result["0"].email ,
+         "name":result["0"].name
          
      };
  

@@ -41,6 +41,7 @@ exports.loginUser = async (req, res) => {
         const result = await UserLogInServices(body)
 
         const token = auth.createToken(result)
+        
 
         if (result.length > 0) {
             res.status(200).json({

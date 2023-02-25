@@ -1,50 +1,133 @@
-import React from 'react'
-
-
-const navmenu = () => {
-return(
-     <div className='fluid-contailer'>
-          <nav class="navbar bg-body-tertiary fixed-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Offcanvas navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-      </div>
-      <div class="offcanvas-body">
-        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
-
-
-     </div>
-)
-     
+import {React} from 'react';
+import {  Dropdown, Space} from 'antd';
+import {MenuUnfoldOutlined} from "@ant-design/icons";
+//import {getUserDetails, removeSession} from "../helper/SessionHelper";
+import image from "../../assets/images/image.png"
 
 
 
+
+const items = [
+    {
+        key: '1',
+        label: (
+            <a className="Item"  rel="noopener noreferrer" href="/">
+               Dashboard
+            </a>
+        ),
+    },
+    {
+        key: '2',
+        label: (
+            <a className="Item"  rel="noopener noreferrer" href="/create">
+                Create New
+            </a>
+        ),
+    },
+    {
+        key: '3',
+        label: (
+            <a className="Item"  rel="noopener noreferrer" href="/new">
+                New Task
+            </a>
+        ),
+    },
+    {
+        key: '4',
+        label: (
+            <a className="Item" rel="noopener noreferrer" href="/progress">
+                In Progress
+            </a>
+        ),
+    },
+    {
+        key: '5',
+        label: (
+            <a className="Item"  rel="noopener noreferrer" href="/completed">
+                Completed
+            </a>
+        ),
+    },
+    {
+        key: '6',
+        label: (
+            <a className="Item"  rel="noopener noreferrer" href="/canceled">
+                Canceled
+            </a>
+        ),
+    }
+
+];
+
+
+const Navmenu = () => {
+
+const logout=()=>{
+   
 }
 
-export default navmenu
+    return (
+
+        <div className="shadow-lg ">
+            <row>
+
+                <nav className="navbar ">
+
+                   <Space direction="vertical">
+
+                       <Space wrap>
+                           <Dropdown
+                               menu={{
+                                   items,
+                               }}
+                               placement="topRight"
+                           >
+                               <i className="navicon"><MenuUnfoldOutlined/></i>
+
+                           </Dropdown>
+                       </Space>
+                   </Space>
+
+                   <div>
+                       <div className="float-right h-auto d-flex">
+                           <div className="user-dropdown">
+                               <img className="icon-nav-img icon-nav " src={image} alt=""/>
+
+
+                               <div className="user-dropdown-content ">
+                                   <div className="mt-4 text-center">
+                                       <img className="icon-nav-img icon-nav" src="" alt=""/>
+
+                                       <p></p>
+                                       <hr className="user-dropdown-divider  p-0"/>
+                                   </div>
+
+                                   <div>
+                                       <a  className="side-bar-item" href="/profile">
+
+                                           <span  className="side-bar-item-caption">Profile</span>
+                                       </a>
+                                   </div>
+
+
+                                   <div>
+                                       <a  className="side-bar-item">
+
+                                           <span onClick={logout}  className="side-bar-item-caption btn btn-primary">Logout</span>
+                                       </a>
+                                   </div>
+
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+
+               </nav>
+
+               </row>
+
+          </div>
+    );
+};
+
+export default Navmenu;
