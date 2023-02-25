@@ -141,44 +141,25 @@ export function Allpost(){
 }
 
 
-export function postByid(id){
+// export function postByid(id){
 
-    const url=BaseUrl+"/selectPostById/"+id
-    return  axios.get(url)
-        .then((res)=>{
+//     const url=BaseUrl+"/selectPostById/"+id
+//     return  axios.get(url)
+//         .then((res)=>{
             
        
-        if(res.status===200){ 
-            return res.data
+//         if(res.status===200){ 
+//             return res.data
             
-        }
-        else {
+//         }
+//         else {
            
-            return false;
-        }
-    })
-        .catch((error)=>{
+//             return false;
+//         }
+//     })
+//         .catch((error)=>{
             
-            return false;
-        })
-}
+//             return false;
+//         })
+// }
 
-export function Delete (id){
-
-    const URL= BaseUrl+"/deleteProduct/"+id
-
-  return axios.post(URL)
-
-        .then((res)=>{
-            if(res.status===200){
-                return true
-            }
-            else {
-                return false
-            }
-        })
-        .catch((error)=>{
-            console.log(error)
-            return false
-        })
-}

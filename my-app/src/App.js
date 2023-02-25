@@ -7,7 +7,7 @@ import Login from './components/Login/Login'
 import CreatePost from './components/CreatePost/CreatePost'
 import Allpost from './components/AllPost/Allpost'
 import SelectPost from './components/AllPost/SelectPost'
-import UserAllPost from './components/UserAllPost/UserAllPost'
+
 
 
 const App = () => {
@@ -24,7 +24,7 @@ const App = () => {
   <Route path='/login' element={<Login/>} ></Route>
   <Route path='/create' element={<CreatePost/>} ></Route>
   <Route path='/' element={<Allpost/>} ></Route>
-  <Route path='/userAllPost' element={<UserAllPost/>} ></Route>
+  
   <Route path='/selectpost/:id' element={<SelectPost/>} ></Route>
 
     </Routes>
